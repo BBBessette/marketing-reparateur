@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Marketing réparateur — une idée de Benoît Bessette : réparer la définition de réussir sa vie.">
+  <title>Marketing réparateur — Benoît Bessette</title>
+  <style>
+    :root {
+      --black: #171717;
+      --ink: #292929;
+      --graphite: #505050;
+      --mid: #858585;
+      --silver: #c8c8c8;
+      --mist: #e8e8e8;
+      --paper: #f7f7f5;
+      --white: #ffffff;
+      --line: rgba(23,23,23,.17);
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.6; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: auto; }
+    header { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: rgba(247,247,245,.95); backdrop-filter: blur(12px); z-index: 5; }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { text-decoration: none; font-family: var(--serif); font-size: 1.22rem; line-height: 1.05; letter-spacing: -.02em; }
+    .brand small { display: block; margin-top: 4px; font: 700 .65rem/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--graphite); }
+    nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 17px; }
+    nav a { text-decoration: none; font-size: .83rem; font-weight: 700; }
+    nav a:hover, nav a:focus { color: var(--mid); }
+    .hero { min-height: 720px; display: grid; align-items: end; padding: 86px 0 68px; background: radial-gradient(circle at 82% 17%, rgba(80,80,80,.18), transparent 25%), radial-gradient(circle at 15% 82%, rgba(200,200,200,.48), transparent 35%); }
+    .eyebrow { margin: 0 0 24px; color: var(--graphite); font-size: .75rem; line-height: 1.3; font-weight: 850; text-transform: uppercase; letter-spacing: .15em; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: .98; letter-spacing: -.045em; }
+    h1 { max-width: 900px; margin: 0; font-size: clamp(4rem, 10vw, 8.7rem); color: var(--black); }
+    .hero h1 em { color: var(--graphite); }
+    .hero-copy { max-width: 630px; margin: 35px 0 0; font: 400 clamp(1.15rem, 2.2vw, 1.5rem)/1.48 var(--serif); }
+    .hero-links { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 14px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 47px; padding: 0 22px; border: 1px solid var(--black); background: var(--black); color: var(--white); text-decoration: none; font: 750 .88rem var(--sans); cursor: pointer; }
+    .button.alt { background: transparent; color: var(--black); }
+    .button:hover { background: var(--graphite); border-color: var(--graphite); color: var(--white); }
+    .button:focus-visible { outline: 3px solid var(--mid); outline-offset: 3px; }
+    section { padding: 106px 0; border-top: 1px solid var(--line); }
+    .section-grid { display: grid; grid-template-columns: minmax(220px, .68fr) minmax(0, 1.65fr); gap: 8vw; }
+    .section-number { margin: 0; color: var(--graphite); font-weight: 850; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; }
+    h2 { margin: 10px 0 0; font-size: clamp(2.5rem, 5vw, 5rem); color: var(--black); }
+    .lead { margin: 0; font: 400 clamp(1.4rem, 2.45vw, 2rem)/1.35 var(--serif); }
+    .body-copy { max-width: 720px; font-size: 1.03rem; }
+    .statement { padding: 82px 0; background: var(--black); color: var(--paper); }
+    .statement p { max-width: 940px; margin: 0; font: 400 clamp(2.2rem, 5vw, 4.8rem)/1.04 var(--serif); letter-spacing: -.04em; }
+    .statement em { color: var(--silver); }
+    .question-list { margin: 38px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .question-list li { padding: 21px 0; border-bottom: 1px solid var(--line); font: 400 clamp(1.25rem, 2.3vw, 1.75rem)/1.25 var(--serif); }
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 38px; }
+    .pillar { min-height: 275px; padding: 28px; background: var(--mist); border-top: 4px solid var(--graphite); }
+    .pillar:nth-child(2) { background: #dedede; border-color: var(--mid); }
+    .pillar:nth-child(3) { background: #ececec; border-color: var(--black); }
+    .pillar h3 { margin: 42px 0 14px; font-size: 2rem; }
+    .pillar p { margin: 0; font-size: .95rem; }
+    .kuba { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 36px; background: var(--line); border: 1px solid var(--line); }
+    .kuba div { padding: 24px; background: var(--white); min-height: 176px; }
+    .kuba div:nth-child(even) { background: var(--mist); }
+    .kuba strong { color: var(--graphite); display: block; margin-bottom: 16px; font-size: .67rem; line-height: 1.15; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+    .kuba p { margin: 0; font: 1.15rem/1.18 var(--serif); }
+    .bio { background: #e1e1df; }
+    .bio .body-copy p:first-child { margin-top: 0; }
+    .credentials { margin: 32px 0 0; padding: 0; list-style: none; columns: 2; gap: 36px; }
+    .credentials li { break-inside: avoid; margin: 0 0 14px; padding-left: 17px; position: relative; font-size: .95rem; }
+    .credentials li::before { content: '—'; position: absolute; left: 0; color: var(--graphite); }
+    .linkedin { display: inline-flex; margin-top: 12px; color: var(--black); font-weight: 780; text-underline-offset: 4px; }
+    .linkedin:hover { color: var(--mid); }
+    .contact { background: var(--graphite); color: var(--white); }
+    .contact .section-number { color: var(--silver); }
+    .contact h2 { max-width: 700px; color: var(--white); }
+    .contact p { max-width: 640px; font: 1.3rem/1.42 var(--serif); }
+    .contact-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+    .contact .button { border-color: var(--white); background: var(--white); color: var(--black); }
+    .contact .button:hover { background: var(--black); border-color: var(--black); color: var(--white); }
+    .email-address { font-size: .9rem; font-weight: 700; overflow-wrap: anywhere; }
+    .copy-status { min-height: 1.35em; margin: 12px 0 0; font-size: .88rem; font-weight: 700; }
+    footer { padding: 28px 0; background: var(--black); color: var(--mist); font-size: .78rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 1120px); }
+      .nav { min-height: 70px; align-items: flex-start; padding: 16px 0; }
+      nav { gap: 10px 14px; max-width: 52%; }
+      nav a { font-size: .72rem; }
+      .hero { min-height: 640px; padding: 70px 0 54px; }
+      .section-grid { grid-template-columns: 1fr; gap: 30px; }
+      section { padding: 72px 0; }
+      .pillars, .kuba { grid-template-columns: 1fr; }
+      .pillar { min-height: auto; }
+      .pillar h3 { margin-top: 18px; }
+      .credentials { columns: 1; }
+      .kuba strong { font-size: .75rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#accueil">Marketing réparateur<small>Une idée de Benoît Bessette</small></a>
+      <nav aria-label="Navigation principale"><a href="#idee">L’idée</a><a href="#questionner">Questionner</a><a href="#agir">Agir</a><a href="#benoit">Benoît Bessette</a><a href="#contact">Inviter</a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="accueil"><div class="wrap"><p class="eyebrow">Une idée de Benoît Bessette</p><h1>Réparer la définition de <em>réussir</em> sa vie.</h1><p class="hero-copy">Le marketing est l’un des outils les plus puissants de notre époque. Et si nous mettions sa créativité, sa capacité à émouvoir et son influence au service de liens humains plus riches, d’un monde plus durable et d’une réussite moins matérielle?</p><div class="hero-links"><a class="button" href="#idee">Découvrir l’idée</a><a class="button alt" href="#contact">Inviter Benoît Bessette</a></div></div></section>
+    <section id="idee"><div class="wrap section-grid"><div><p class="section-number">01 — L’idée</p><h2>Un marketing qui répare</h2></div><div><p class="lead">Le marketing réparateur propose de détourner la puissance émotionnelle du marketing consumériste afin de réorienter nos désirs vers ce qui fait réellement grandir les personnes et les collectivités.</p><div class="body-copy"><p>Le marketing contemporain sait rendre désirables les marques, la gratification instantanée et le renouvellement accéléré des biens. Il participe ainsi à une définition étroite de la réussite : posséder davantage et afficher son statut.</p><p>La proposition est simple, mais exigeante : conserver le pouvoir créatif du marketing — l’insight, le récit, l’émotion, l’art — et lui donner son plus grand mandat. Réparer la définition de réussir sa vie.</p></div></div></div></section>
+    <aside class="statement"><div class="wrap"><p>De l’accumulation des avoirs à <em>l’abondance de liens sociaux gratifiants.</em></p></div></aside>
+    <section id="questionner"><div class="wrap section-grid"><div><p class="section-number">02 — Le sain questionnement</p><h2>Ne pas céder aux réponses faciles</h2></div><div><p class="lead">Le marketing réparateur n’impose pas un nouveau dogme. Il commence par le courage de garder ouvertes les questions essentielles.</p><ul class="question-list"><li>Si la réussite n’est plus mesurée d’abord par l’argent et les biens consommés, par quoi la reconnaîtrons-nous?</li><li>Comment rendre désirables la coopération, la sobriété, la confiance et l’attention aux autres?</li><li>Que devient le rôle du marketing lorsque l’impact positif sur autrui importe autant que la croissance?</li><li>Comment l’art peut-il ouvrir les cœurs et les esprits là où les seuls arguments rationnels n’ont pas suffi?</li></ul></div></div></section>
+    <section id="agir"><div class="wrap section-grid"><div><p class="section-number">03 — Une pratique</p><h2>Réorienter le désir</h2></div><div><p class="lead">Il ne s’agit pas de réduire l’être humain à la raison, ni de renoncer à l’émotion. Il s’agit de changer ce qui la nourrit.</p><div class="pillars"><article class="pillar"><p class="section-number">A</p><h3>Un nouveau récit</h3><p>Créer des narratifs positifs qui déplacent les repères de réussite vers le bien-être, le lien humain, la confiance et l’impact collectif.</p></article><article class="pillar"><p class="section-number">B</p><h3>L’art au centre</h3><p>Donner une place centrale aux artistes et à leur pensée non linéaire pour imaginer d’autres futurs et toucher profondément les publics.</p></article><article class="pillar"><p class="section-number">C</p><h3>Le collectif</h3><p>Faire de l’abondance et de la qualité des liens sociaux une source de reconnaissance, de plaisir et de réussite partagée.</p></article></div></div></div></section>
+    <section><div class="wrap section-grid"><div><p class="section-number">04 — Passer à l’action</p><h2>Du savoir à l’engagement</h2></div><div><p class="lead">Pour changer un comportement, il faut retourner à la base de la gestion du changement. Rendre la transformation compréhensible, désirable et praticable est essentiel.</p><div class="kuba" aria-label="Un parcours de gestion du changement"><div><strong>Le savoir</strong><p>Donner accès aux faits et aux enjeux.</p></div><div><strong>Le comprendre</strong><p>Faire sens dans son propre contexte.</p></div><div><strong>Y croire</strong><p>Créer l’envie de prendre part au changement.</p></div><div><strong>Agir</strong><p>Offrir des gestes précis, réalistes et partagés.</p></div></div></div></div></section>
+    <section class="bio" id="benoit"><div class="wrap section-grid"><div><p class="section-number">05 — Le conférencier</p><h2>Benoît Bessette, MBA</h2></div><div class="body-copy"><p class="lead">Stratège en marketing, dirigeant, administrateur de société et enseignant au deuxième cycle, Benoît Bessette cumule 30 ans d’expérience au sein d’agences et d’entreprises, au Québec et à l’international.</p><p>Son parcours comprend des postes clés chez Cossette, Camso (maintenant Michelin), Sollio Agriculture et le Groupe Nutri (maintenant Lovo). Il y a développé et déployé des stratégies de marque, numériques et de transformation dans plusieurs secteurs d’activité. Son leadership a été reconnu par un jury de pairs qui l’a désigné « Visionnaire Marketing Deloitte-Infopresse » en 2020.</p><p>Depuis 18 ans, il enseigne le marketing au deuxième cycle à l’Université de Sherbrooke. Sa pratique de la gouvernance s’appuie sur 25 ans d’expérience comme administrateur et sur des mandats au sein d’organisations publiques, culturelles, éducatives et associatives.</p><ul class="credentials"><li>Reconnu « Visionnaire Marketing Deloitte-Infopresse » par un jury de pairs en 2020.</li><li>Ancien administrateur de l’Agence de mobilité durable de Montréal, de CAA-Québec et du Concours musical international de Montréal.</li><li>Expérience de comités de gouvernance, ressources humaines, communication, audit, finances, risques et développement des affaires.</li><li>B. Sc. en science économique, Université de Montréal; MBA pour cadres en exercice et scolarité de 3e cycle, Université de Sherbrooke.</li></ul><a class="linkedin" href="https://www.linkedin.com/in/benoitbessette/" target="_blank" rel="noopener">Consulter le profil LinkedIn de Benoît Bessette ↗</a></div></div></section>
+    <section class="contact" id="contact"><div class="wrap section-grid"><div><p class="section-number">06 — Conférences et échanges</p></div><div><h2>Inviter Benoît Bessette à ouvrir la conversation.</h2><p>Pour une conférence, une table ronde, une discussion avec vos équipes dirigeantes ou une intervention auprès d’étudiants : le marketing réparateur propose un regard exigeant, accessible et profondément humain sur le rôle du marketing dans la société.</p><div class="contact-actions"><button class="button" type="button" id="copy-email" data-email="benoit.b.bessette@gmail.com">Copier l’adresse courriel</button><span class="email-address">benoit.b.bessette@gmail.com</span></div><p class="copy-status" id="copy-status" aria-live="polite"></p></div></div></section>
+  </main>
+  <footer><div class="wrap"><span>© 2026 Benoît Bessette. Tous droits réservés.</span><span>Marketing réparateur — le sain questionnement comme point de départ.</span></div></footer>
+  <script>
+    (function () {
+      const button = document.getElementById('copy-email');
+      const status = document.getElementById('copy-status');
+      const email = button.dataset.email;
+      button.addEventListener('click', async function () {
+        try { await navigator.clipboard.writeText(email); }
+        catch (error) {
+          const field = document.createElement('textarea'); field.value = email; field.setAttribute('readonly', ''); field.style.position = 'fixed'; field.style.opacity = '0'; document.body.appendChild(field); field.select(); document.execCommand('copy'); document.body.removeChild(field);
+        }
+        status.textContent = 'Adresse courriel copiée. Vous pouvez maintenant la coller dans votre application de messagerie.';
+        button.textContent = 'Adresse copiée';
+        setTimeout(function () { button.textContent = 'Copier l’adresse courriel'; }, 2600);
+      });
+    }());
+  </script>
+</body>
+</html>
